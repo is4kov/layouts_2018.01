@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>CSS Q&A Session</title>
+
+		<meta name="description" content="CSS Q&A Session">
+		<meta name="author" content="Yevhen Isakov">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/epam.css" id="theme">
+
+        <link rel="stylesheet" href="css/my.css" />
+
+        <!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/user.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+
+			<div class="slides">
+
+				<section data-state="mainpage" data-transition="slide">
+					<h1>CSS</h1>
+					<br>
+					<h3>Yevhen Isakov</h3>
+					<time datetime="2016-12-20">20 December, 2016</time>
+				</section>
+
+				<section data-state="agenda">
+					<h2>Agenda</h2>
+					<ul>
+						<li class="fragment">Positioning</li>
+						<li class="fragment">Z-index</li>
+						<li class="fragment">Tables</li>
+						<li class="fragment">Floats</li>
+						<li class="fragment">Inline-blocks</li>
+						</ul>
+				</section>
+<!--
+				<section class="zoomed">
+					<iframe height='265' scrolling='no' title='NboVbG' src='https://codepen.io/vend3tta/embed/NboVbG/?height=265&theme-id=dark&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/vend3tta/pen/NboVbG/'>NboVbG</a> by vend3tta (<a href='http://codepen.io/vend3tta'>@vend3tta</a>) on <a href='http://codepen.io'>CodePen</a>.
+					</iframe>
+					<div class="fragment">
+						<iframe height='265' scrolling='no' title='qqgGqK' src='https://codepen.io/vend3tta/embed/qqgGqK/?height=265&theme-id=dark&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/vend3tta/pen/qqgGqK/'>qqgGqK</a> by vend3tta (<a href='http://codepen.io/vend3tta'>@vend3tta</a>) on <a href='http://codepen.io'>CodePen</a>.
+						</iframe>
+					</div>
+				</section>-->
+
+				<section>
+					<h2>Layout</h2>
+					<div class="fragment">General page blocks organization which defines structure of a page and positioning of its content.</div>
+				</section>
+
+				<section>
+					<iframe height='500' scrolling='no' title='mpYzVq' src='https://codepen.io/vend3tta/embed/mpYzVq/?height=500&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/vend3tta/pen/wpZJLQ/'>wpZJLQ</a> by vend3tta (<a href='https://codepen.io/vend3tta'>@vend3tta</a>) on <a href='https://codepen.io'>CodePen</a>.
+					</iframe>
+				</section>
+
+				<section>
+					<iframe height='500' scrolling='no' title='wpZJLQ' src='https://codepen.io/vend3tta/embed/wpZJLQ/?height=500&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/vend3tta/pen/wpZJLQ/'>wpZJLQ</a> by vend3tta (<a href='https://codepen.io/vend3tta'>@vend3tta</a>) on <a href='https://codepen.io'>CodePen</a>.
+					</iframe>
+				</section>
+
+				<section>
+					<iframe height='500' scrolling='no' title='YpBYWE' src='https://codepen.io/vend3tta/embed/YpBYWE/?height=500&theme-id=dark&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/YpBYWE/'>YpBYWE</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+					</iframe>
+				</section>
+
+				<section>
+					<h3>Document <span class="coloured-symbols coloured-symbols_blue">flow</span></h3>
+					<div class="fragment">Document flow is the arrangement of page elements as defined by positioning statements and the order of html statements; that is, how the different elements take up space and arrange themselves around each other.</div>
+				</section>
+
+				<section>
+					<iframe height='500' scrolling='no' title='YpBYWE' src='https://codepen.io/vend3tta/embed/YpBYWE/?height=500&theme-id=dark&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/YpBYWE/'>YpBYWE</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+					</iframe>
+				</section>
+
+				<section data-state="positioning">
+					<h2>Positioning</h2>
+				</section>
+
+				<section>
+					<div class="section-subtitle">position: static</div>
+					<div class="fragment">
+						<div style="text-align: left;">The box is a normal box, laid out according to the normal flow. The 'top', 'right', 'bottom', and 'left' properties <strong>do not</strong> apply.</div>
+						<iframe height='450' scrolling='no' title='bBzLKw' src='https://codepen.io/vend3tta/embed/bBzLKw/?height=450&theme-id=dark&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/bBzLKw/'>bBzLKw</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+						</iframe>
+					</div>
+				</section>
+
+				<section data-transition="none">
+					<div class="section-subtitle">position: relative</div>
+					<iframe height='500' scrolling='no' title='bBzLmB' src='https://codepen.io/vend3tta/embed/bBzLmB/?height=500&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/bBzLmB/'>bBzLmB</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+					</iframe>
+				</section>
+
+				<section data-transition="none">
+					<div class="section-subtitle">position: relative</div>
+					<iframe height='500' scrolling='no' title='vybdqO' src='https://codepen.io/vend3tta/embed/vybdqO/?height=500&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/vybdqO/'>vybdqO</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+					</iframe>
+				</section>
+
+				<section>
+					<div class="section-subtitle">position: absolute</div>
+					<iframe height='450' scrolling='no' title='aBXYNr' src='https://codepen.io/vend3tta/embed/aBXYNr/?height=450&theme-id=dark&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/aBXYNr/'>aBXYNr</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+					</iframe>
+				</section>
+
+				<section data-transition="none">
+					<div class="section-subtitle">position: absolute</div>
+					<iframe height='500' scrolling='no' title='pNGLdx' src='https://codepen.io/vend3tta/embed/pNGLdx/?height=500&theme-id=dark&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/pNGLdx/'>pNGLdx</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+					</iframe>
+				</section>
+
+				<section data-transition="none">
+					<div class="section-subtitle">position: absolute</div>
+					<iframe height='500' scrolling='no' title='jVdzYp' src='https://codepen.io/vend3tta/embed/jVdzYp/?height=500&theme-id=dark&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/jVdzYp/'>jVdzYp</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+					</iframe>
+				</section>
+
+<!--				<section>
+					<iframe height='500' scrolling='no' title='zoeWWg' src='https://codepen.io/vend3tta/embed/zoeWWg/?height=500&theme-id=dark&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/zoeWWg/'>zoeWWg</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+					</iframe>
+				</section>-->
+
+				<section>
+					<div class="section-subtitle">position: fixed</div>
+					<iframe height='500' scrolling='no' title='oYmqdx' src='https://codepen.io/vend3tta/embed/oYmqdx/?height=500&theme-id=dark&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/oYmqdx/'>oYmqdx</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+					</iframe>
+				</section>
+
+				<section>
+					<h3><span class="coloured-symbols coloured-symbols_blue">Z</span>-index</h3>
+					<div class="fragment">
+						<blockquote>The z-index property specifies the stack order of an element.</blockquote>
+						<div class="blockquote-author">
+							<a href="https://www.w3.org/wiki/CSS/Properties/z-index" target="_blank">W3C Wiki</a>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<img src="assets/i/z-index.gif" alt="">
+				</section>
+
+				<section>
+					<h3>Values</h3>
+					<ul>
+						<li class="fragment">
+							<pre><code>auto</code></pre>
+							<p>The stack level of the generated box in the current stacking context is '0'. The box does not establish a new stacking context unless it is the root element.</p>
+						</li>
+						<li class="fragment">
+							<pre><code>&lt;integer&gt;</code></pre>
+							<p>This integer is the stack level of the generated box in the current stacking context. The box also establishes a new stacking context.</p>
+						</li>
+						<li class="fragment">
+							<pre><code>inherit</code></pre>
+							<p>Takes the same specified value as the property for the element's parent.</p>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<iframe height='500' scrolling='no' title='LbqdMZ' src='https://codepen.io/vend3tta/embed/LbqdMZ/?height=500&theme-id=dark&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/LbqdMZ/'>LbqdMZ</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+					</iframe>
+				</section>
+
+				<section>
+					<iframe height='500' scrolling='no' title='jVdzoX' src='https://codepen.io/vend3tta/embed/jVdzoX/?height=500&theme-id=dark&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/jVdzoX/'>jVdzoX</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+					</iframe>
+				</section>
+
+				<section>
+					<div data-height="500" data-theme-id="0" data-slug-hash="jVdzoX" data-default-tab="css,result" data-user="vend3tta" data-embed-version="2" data-pen-title="jVdzoX" class="codepen">See the Pen <a href="https://codepen.io/vend3tta/pen/jVdzoX/">jVdzoX</a> by vend3tta (<a href="https://codepen.io/vend3tta">@vend3tta</a>) on <a href="https://codepen.io">CodePen</a>.</div>
+					<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+				</section>
+
+				<section>
+					<iframe height='500' scrolling='no' title='mOvLyp' src='https://codepen.io/vend3tta/embed/mOvLyp/?height=500&theme-id=dark&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/mOvLyp/'>mOvLyp</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+					</iframe>
+				</section>
+
+				<section>
+					<h3>Notes</h3>
+					<ul>
+						<li class="fragment">Element with [positive] z-index always will be above element without it.</li>
+						<li class="fragment">Lower amount of z-index elements is better.</li>
+						<li class="fragment">On the same level the last element will be the highest one.</li>
+						<li class="fragment">In most cases you actually <strong>do not</strong> need z-index.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Tables</h2>
+				</section>
+
+				<section>
+					<iframe height='500' scrolling='no' title='wpZJLQ' src='//codepen.io/vend3tta/embed/wpZJLQ/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/vend3tta/pen/wpZJLQ/'>wpZJLQ</a> by vend3tta (<a href='https://codepen.io/vend3tta'>@vend3tta</a>) on <a href='https://codepen.io'>CodePen</a>.
+					</iframe>
+				</section>
+
+				<section>
+					<h2 data-question="3">Floats</h2>
+				</section>
+
+				<section>
+					<iframe height='300' scrolling='no' title='zoejyw' src='https://codepen.io/vend3tta/embed/zoejyw/?height=300&theme-id=dark&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/zoejyw/'>zoejyw</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+					</iframe>
+				</section>
+
+				<section>
+					<iframe height='300' scrolling='no' title='ENrLMv' src='https://codepen.io/vend3tta/embed/ENrLMv/?height=300&theme-id=dark&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/ENrLMv/'>ENrLMv</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+					</iframe>
+
+					<div class="fragment">
+						<iframe height='300' scrolling='no' title='MbLXgb' src='https://codepen.io/vend3tta/embed/MbLXgb/?height=300&theme-id=dark&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/MbLXgb/'>MbLXgb</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+						</iframe>
+					</div>
+				</section>
+
+				<section>
+					<h4>Float?</h4>
+					<h3 class="fragment">Just <span class="coloured-symbols coloured-symbols_blue">clear</span> it</h3>
+				</section>
+
+				<section>
+					<h3>Evolution of <span class="coloured-symbols coloured-symbols_blue">clear</span></h3>
+					<ul>
+						<li class="fragment">&lt;br clear="all" /&gt;</li>
+						<li class="fragment">&lt;div class="clear"&gt;&lt;/div&gt;</li>
+						<li class="fragment">.clear:after { }</li>
+						<li class="fragment">Micro-clearfix hack</li>
+					</ul>
+				</section>
+
+				<section>
+					<div class="section-subtitle">&lt;br clear="all" /&gt;</div>
+					<iframe height='265' scrolling='no' title='PbVaYv' src='https://codepen.io/vend3tta/embed/PbVaYv/?height=265&theme-id=dark&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/PbVaYv/'>PbVaYv</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+					</iframe>
+					<div class="fragment">
+						<iframe height='265' scrolling='no' title='bBzKNN' src='https://codepen.io/vend3tta/embed/bBzKNN/?height=265&theme-id=dark&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/bBzKNN/'>bBzKNN</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+						</iframe>
+					</div>
+				</section>
+
+				<section>
+					<div class="section-subtitle">&lt;div class="clear"&gt;&lt;/div&gt;</div>
+					<iframe height='265' scrolling='no' title='ZBwRbK' src='https://codepen.io/vend3tta/embed/ZBwRbK/?height=265&theme-id=dark&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/ZBwRbK/'>ZBwRbK</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+					</iframe>
+					<div class="fragment">
+						<iframe height='265' scrolling='no' title='rWPKVw' src='https://codepen.io/vend3tta/embed/rWPKVw/?height=265&theme-id=dark&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/rWPKVw/'>rWPKVw</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+						</iframe>
+					</div>
+				</section>
+
+				<section>
+					<div class="section-subtitle">Micro-clearfix hack</div>
+					<div class="fragment">
+						<pre><code class="css">.clearfix::before,
+.clearfix::after {
+	content: "";
+	display: table;
+	}
+
+.clearfix::after {
+	clear: both;
+	}
+
+.clearfix {
+	zoom: 1;
+	}</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<div class="section-subtitle">Other variants</div>
+					<div class="fragment">overflow: hidden</div>
+					<div class="fragment">display: table</div>
+				</section>
+
+				<section>
+					<iframe height='265' scrolling='no' title='ObdEXL' src='https://codepen.io/vend3tta/embed/ObdEXL/?height=265&theme-id=dark&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/ObdEXL/'>ObdEXL</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+					</iframe>
+					<div class="fragment">
+						<iframe height='265' scrolling='no' title='KNJezg' src='https://codepen.io/vend3tta/embed/KNJezg/?height=265&theme-id=dark&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/KNJezg/'>KNJezg</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+						</iframe>
+					</div>
+				</section>
+
+				<section>
+					<h2>Context formatting</h2>
+					<div class="fragment">
+						<div>Part of CSS rendering, page region with default positioning blocks within. Elements from different context can not affect each other.</div>
+						<div><a href="https://www.w3.org/TR/CSS21/visuren.html#normal-flow" target="_blank">Visual Formatting Model - W3C</a></div>
+					</div>
+				</section>
+
+				<section>
+					<h4>New context causes to</h4>
+					<ul>
+						<li class="fragment">Floats</li>
+						<li class="fragment">Inline-block elements</li>
+						<li class="fragment">Table-* display</li>
+						<li class="fragment">Overflow <span class="mark">(not visible)</span></li>
+						<li class="fragment">Position <span class="mark">(absolute or fixed)</span></li>
+						<li class="fragment">Flex elements</li>
+					</ul>
+				</section>
+
+				<section>
+					<div class="section-subtitle">oveflow: hidden</div>
+					<iframe height='265' scrolling='no' title='mOvvoJ' src='https://codepen.io/vend3tta/embed/mOvvoJ/?height=265&theme-id=dark&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/mOvvoJ/'>mOvvoJ</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+					</iframe>
+				</section>
+
+				<section>
+					<div class="section-subtitle">display: table</div>
+					<iframe height='265' scrolling='no' title='WoPPmj' src='https://codepen.io/vend3tta/embed/WoPPmj/?height=265&theme-id=dark&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/vend3tta/pen/WoPPmj/'>WoPPmj</a> by vend3tta (<a href='//codepen.io/vend3tta'>@vend3tta</a>) on <a href='//codepen.io'>CodePen</a>.
+					</iframe>
+				</section>
+
+				<section>
+					<h3><span class="coloured-symbols coloured-symbols_blue">Flex</span>box</h3>
+					<div class="fragment"><img src="assets/i/flexbox-caniuse.png" alt=""></div>
+				</section>
+
+				<section>
+					<div><a href="https://pepelsbey.net/pres/flexbox-gotcha/#cover" target="_blank">Flexbox Gotcha</a> (Vadim Makeev)</div>
+				</section>
+
+				<section><a href="https://youtu.be/O4kiMLPeNGw?list=PLJ5NW5T60UphOVDsbAC97JQ2KEprVgh2r" target="_blank">You do not know CSS (Anton Nemtsev)</a></section>
+
+				<section>
+					<h2>CSS is <span class="coloured-symbols coloured-symbols_blue">awesome</span>!</h2>
+				</section>
+
+                <section data-state="thank-you">
+                    <h2 class="coloured-symbols coloured-symbols_blue">Thank you</h2>
+	                <div>Questions?</div>
+                </section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+                slideNumber: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+                transitionSpeed: 'fast',
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+        <script>
+            Reveal.configure({backgroundTransition: 'fade'});
+        </script>
+	</body>
+</html>
