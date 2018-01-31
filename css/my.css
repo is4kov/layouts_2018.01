@@ -508,3 +508,8 @@ span.value {
 .reveal .slide-number {
 	display: none;
 }
+
+.compatibitility .slide-background {
+	background: url(../assets/i/box-model.png) center;
+	background-size: contain;
+}
