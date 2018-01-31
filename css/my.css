@@ -509,7 +509,7 @@ span.value {
 	display: none;
 }
 
-.compatibitility .slide-background {
+.box-model .slide-background {
 	background: url(../assets/i/box-model.png) center;
 	background-size: contain;
 }
