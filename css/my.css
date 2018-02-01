@@ -514,3 +514,9 @@ span.value {
 	background-position: center;
 	background-size: auto 80%;
 }
+
+.flex-axes .slide-background {
+	background-image: url(../assets/i/flex-axes.png);
+	background-position: center;
+	background-size: auto 80%;
+}
